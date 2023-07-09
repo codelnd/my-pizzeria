@@ -3,9 +3,9 @@ import './App.css'
 function App() {
 
     return (
-        <>
-            App
-        </>
+        <div className='wrapper'>
+
+        </div>
     )
 }
 
