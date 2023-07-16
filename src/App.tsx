@@ -24,6 +24,8 @@ function App() {
                   title={el.title}
                   price={el.price}
                   photo={el.imageUrl}
+                  sizes={el.sizes}
+                  types={el.types}
                 />
               );
             })}

@@ -1,8 +1,12 @@
 import React from "react";
 
-const Pizza = ({ title, price, photo }) => {
-  const [count, setCount] = React.useState(0);
+const Pizza = ({ title, price, photo, sizes, types }) => {
+  const pizzaTypes = ["тонкое", "традиционное"];
+  const [count, setCount] = React.useState(0); // Временное решение
+  const [activeSize, setActiveSize] = React.useState(0);
+  const [activeType, setActiveType] = React.useState(0);
 
+  // Временное решение
   const onAddToCart = () => {
     setCount((prevState) => prevState + 1);
   };
@@ -13,13 +17,26 @@ const Pizza = ({ title, price, photo }) => {
       <h4 className="pizza-block__title">{title}</h4>
       <div className="pizza-block__selector">
         <ul>
-          <li className="active">тонкое</li>
-          <li>традиционное</li>
+          {types.map((type, i) => {
+            return (
+              <li
+                onClick={() => setActiveType(type)}
+                className={`${activeType === type ? "active" : ""}`}
+              >
+                {pizzaTypes[type]}
+              </li>
+            );
+          })}
         </ul>
         <ul>
-          <li className="active">26 см.</li>
-          <li>30 см.</li>
-          <li>40 см.</li>
+          {sizes.map((size, i) => (
+            <li
+              onClick={() => setActiveSize(i)}
+              className={`${activeSize === i ? "active" : ""}`}
+            >
+              {size} см.
+            </li>
+          ))}
         </ul>
       </div>
       <div className="pizza-block__bottom">
