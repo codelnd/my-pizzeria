@@ -1,16 +1,16 @@
 import React from "react";
 
-const Pizza = ({ type, price }) => {
+const Pizza = ({ title, price, photo }) => {
   const [count, setCount] = React.useState(0);
+
+  const onAddToCart = () => {
+    setCount((prevState) => prevState + 1);
+  };
 
   return (
     <section className="pizza-block">
-      <img
-        className="pizza-block__image"
-        src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
-        alt="Пицца"
-      />
-      <h4 className="pizza-block__title">{type}</h4>
+      <img className="pizza-block__image" src={photo} alt="Пицца" />
+      <h4 className="pizza-block__title">{title}</h4>
       <div className="pizza-block__selector">
         <ul>
           <li className="active">тонкое</li>
@@ -37,9 +37,7 @@ const Pizza = ({ type, price }) => {
               fill="white"
             />
           </svg>
-          <span onClick={() => setCount((prevState) => prevState + 1)}>
-            Добавить
-          </span>
+          <span onClick={onAddToCart}>Добавить</span>
           <i>{count}</i>
         </button>
       </div>
