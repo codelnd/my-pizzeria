@@ -7,6 +7,7 @@ const Sort = () => {
 
   const onSetSelectedCategory = (category) => {
     setSelectedCategory(category);
+    setIsOpen(false);
   };
 
   return (
@@ -25,7 +26,9 @@ const Sort = () => {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={() => setIsOpen(!isOpen)}>популярности</span>
+        <span onClick={() => setIsOpen(!isOpen)}>
+          {sortCategories[selectedCategory]}
+        </span>
       </div>
       {isOpen && (
         <div className="sort__popup">
