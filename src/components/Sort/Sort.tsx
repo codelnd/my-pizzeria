@@ -1,7 +1,9 @@
 import React from "react";
 
 const Sort = () => {
-  const [isOpen, isSetOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const onTogglePopup = () => {};
 
   return (
     <section className="sort">
@@ -19,15 +21,17 @@ const Sort = () => {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span>популярности</span>
+        <span onClick={() => setIsOpen(!isOpen)}>популярности</span>
       </div>
-      <div className="sort__popup">
-        <ul>
-          <li className="active">популярности</li>
-          <li>цене</li>
-          <li>алфавиту</li>
-        </ul>
-      </div>
+      {isOpen && (
+        <div className="sort__popup">
+          <ul>
+            <li className="active">популярности</li>
+            <li>цене</li>
+            <li>алфавиту</li>
+          </ul>
+        </div>
+      )}
     </section>
   );
 };
