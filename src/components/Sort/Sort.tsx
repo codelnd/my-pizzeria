@@ -3,6 +3,11 @@ import React from "react";
 const Sort = () => {
   const sortCategories = ["популярности", "цене", "алфавиту"];
   const [isOpen, setIsOpen] = React.useState(false);
+  const [sortCategory, setSortCategory] = React.useState(0);
+
+  const onSetSortCategory = (category) => {
+    setSortCategory(category);
+  };
 
   return (
     <section className="sort">
@@ -25,8 +30,13 @@ const Sort = () => {
       {isOpen && (
         <div className="sort__popup">
           <ul>
-            {sortCategories.map((el) => (
-              <li className="active">{el}</li>
+            {sortCategories.map((el, i) => (
+              <li
+                onClick={() => onSetSortCategory(i)}
+                className={sortCategory === i ? "active" : ""}
+              >
+                {el}
+              </li>
             ))}
           </ul>
         </div>
