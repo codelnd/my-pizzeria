@@ -32,6 +32,7 @@ const Sort = () => {
           <ul>
             {sortCategories.map((el, i) => (
               <li
+                key={i}
                 onClick={() => onSetSortCategory(i)}
                 className={sortCategory === i ? "active" : ""}
               >
