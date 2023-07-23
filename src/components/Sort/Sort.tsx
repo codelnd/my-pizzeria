@@ -3,10 +3,10 @@ import React from "react";
 const Sort = () => {
   const sortCategories = ["популярности", "цене", "алфавиту"];
   const [isOpen, setIsOpen] = React.useState(false);
-  const [sortCategory, setSortCategory] = React.useState(0);
+  const [selectedCategory, setSelectedCategory] = React.useState(0);
 
-  const onSetSortCategory = (category) => {
-    setSortCategory(category);
+  const onSetSelectedCategory = (category) => {
+    setSelectedCategory(category);
   };
 
   return (
@@ -33,8 +33,8 @@ const Sort = () => {
             {sortCategories.map((el, i) => (
               <li
                 key={i}
-                onClick={() => onSetSortCategory(i)}
-                className={sortCategory === i ? "active" : ""}
+                onClick={() => onSetSelectedCategory(i)}
+                className={selectedCategory === i ? "active" : ""}
               >
                 {el}
               </li>
