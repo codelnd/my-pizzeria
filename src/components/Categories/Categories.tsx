@@ -11,10 +11,6 @@ const Categories = () => {
   ];
   const [activeInd, setActiveInd] = React.useState(0);
 
-  const onChangeCategory = (i: number) => {
-    setActiveInd(i);
-  };
-
   return (
     <section className="categories">
       <ul>
@@ -22,7 +18,7 @@ const Categories = () => {
           return (
             <li
               key={i}
-              onClick={() => onChangeCategory(i)}
+              onClick={() => setActiveInd(i)}
               className={activeInd === i ? "active" : ""}
             >
               {el}
