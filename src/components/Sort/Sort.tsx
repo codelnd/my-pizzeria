@@ -1,9 +1,8 @@
 import React from "react";
 
 const Sort = () => {
+  const sortCategories = ["популярности", "цене", "алфавиту"];
   const [isOpen, setIsOpen] = React.useState(false);
-
-  const onTogglePopup = () => {};
 
   return (
     <section className="sort">
@@ -26,9 +25,9 @@ const Sort = () => {
       {isOpen && (
         <div className="sort__popup">
           <ul>
-            <li className="active">популярности</li>
-            <li>цене</li>
-            <li>алфавиту</li>
+            {sortCategories.map((el) => (
+              <li className="active">{el}</li>
+            ))}
           </ul>
         </div>
       )}
