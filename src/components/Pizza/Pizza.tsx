@@ -1,6 +1,6 @@
 import React from "react";
 
-const Pizza = ({ title, price, photo, sizes, types }) => {
+const Pizza = ({ title, price, imageUrl, sizes, types }) => {
   const pizzaTypes = ["тонкое", "традиционное"];
   const [count, setCount] = React.useState(0); // Временное решение
   const [activeSize, setActiveSize] = React.useState(0);
@@ -13,7 +13,7 @@ const Pizza = ({ title, price, photo, sizes, types }) => {
 
   return (
     <section className="pizza-block">
-      <img className="pizza-block__image" src={photo} alt="Пицца" />
+      <img className="pizza-block__image" src={imageUrl} alt="Пицца" />
       <h4 className="pizza-block__title">{title}</h4>
       <div className="pizza-block__selector">
         <ul>

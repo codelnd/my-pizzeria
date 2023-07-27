@@ -28,16 +28,7 @@ function App() {
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
             {items.map((el) => {
-              return (
-                <Pizza
-                  key={el.id}
-                  title={el.title}
-                  price={el.price}
-                  photo={el.imageUrl}
-                  sizes={el.sizes}
-                  types={el.types}
-                />
-              );
+              return <Pizza {...el} />;
             })}
           </div>
         </div>
