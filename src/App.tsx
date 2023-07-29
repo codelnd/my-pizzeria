@@ -15,16 +15,9 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
+        setIsLoading(false);
       });
   }, []);
-
-  React.useEffect(() => {
-    if (items.length === 0) {
-      setIsLoading(true);
-    } else {
-      setIsLoading(false);
-    }
-  }, [items, isLoading]);
 
   return (
     <div className="wrapper">
