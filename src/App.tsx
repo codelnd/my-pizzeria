@@ -1,8 +1,9 @@
 import React from "react";
 import "./assets/scss/app.scss";
 import Header from "./components/Header/Header";
-import Home from "./pages/Home";
+import HomePage from "./pages/HomePage/HomePage";
 import { Route, Routes } from "react-router";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <main className="content">
         <div className="container">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
       </main>

@@ -1,10 +1,10 @@
 import React from "react";
-import Categories from "../components/Categories/Categories";
-import Sort from "../components/Sort/Sort";
-import Pizza from "../components/Pizza/Pizza";
-import Skeleton from "../components/shared/Skeleton";
+import Categories from "../../components/Categories/Categories";
+import Sort from "../../components/Sort/Sort";
+import Pizza from "../../components/Pizza/Pizza";
+import Skeleton from "../../components/shared/Skeleton";
 
-const Home = () => {
+const HomePage = () => {
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -33,4 +33,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
