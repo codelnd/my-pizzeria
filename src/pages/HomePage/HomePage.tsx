@@ -4,7 +4,7 @@ import Sort from "../../components/Sort/Sort";
 import Pizza from "../../components/Pizza/Pizza";
 import Skeleton from "../../components/shared/Skeleton";
 
-const Index = () => {
+const HomePage = () => {
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -33,4 +33,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default HomePage;
