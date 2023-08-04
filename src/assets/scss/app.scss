@@ -27,7 +27,9 @@ body {
   padding: 40px 0;
 
   &__title {
-    margin: 35px 0;
+    margin: 45px 0;
+    font-size: 32px;
+    font-weight: 800;
   }
 
   &__items {
@@ -116,10 +118,7 @@ body {
   .content__title {
     display: flex;
     align-items: center;
-    font-size: 36px;
-    font-weight: 800;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    font-size: 32px;
 
     svg {
       position: relative;
