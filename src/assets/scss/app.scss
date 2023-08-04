@@ -15,6 +15,12 @@ body {
   margin: 50px auto;
   border-radius: 10px;
   max-width: 1400px;
+
+
+  @media (max-width: 650px) {
+    width: calc(100vw - 30px);
+  }
+
 }
 
 .content {
@@ -52,7 +58,7 @@ body {
     @media (max-width: 1260px) {
       .categories {
         width: 100%;
-        overflow: scroll;
+        overflow: auto;
 
         ul {
           width: 785px;
@@ -70,11 +76,11 @@ body {
 
     @media (max-width: 768px) {
       .categories {
-ul {
-  li {
-    padding: 10px 20px;
-  }
-}
+        ul {
+          li {
+            padding: 10px 20px;
+          }
+        }
       }
     }
 
