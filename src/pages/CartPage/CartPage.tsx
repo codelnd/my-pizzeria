@@ -1,5 +1,6 @@
 import React from "react";
 import "../../assets/scss/app.scss";
+import { Link } from "react-router-dom";
 
 const CartPage = () => {
   return (
@@ -393,8 +394,8 @@ const CartPage = () => {
             </span>
           </div>
           <div className="cart__bottom-buttons">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="button button--outline button--add go-back-btn"
             >
               <svg
@@ -414,7 +415,7 @@ const CartPage = () => {
               </svg>
 
               <span>Вернуться назад</span>
-            </a>
+            </Link>
             <div className="button pay-btn">
               <span>Оплатить сейчас</span>
             </div>
