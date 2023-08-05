@@ -18,7 +18,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <>
+    <div className="container">
       <div className="content__top">
         <Categories />
         <Sort />
@@ -29,7 +29,7 @@ const HomePage = () => {
           ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
           : items.map((el) => <Pizza key={el.id} {...el} />)}
       </div>
-    </>
+    </div>
   );
 };
 
