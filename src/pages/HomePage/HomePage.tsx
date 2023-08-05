@@ -14,11 +14,11 @@ const HomePage = () => {
       .then((data) => {
         setItems(data);
         setIsLoading(false);
-        document.body.scrollIntoView({
-          block: "start",
-          behavior: "smooth",
-        });
       });
+    document.body.scrollIntoView({
+      block: "start",
+      behavior: "smooth",
+    });
   }, []);
 
   return (
