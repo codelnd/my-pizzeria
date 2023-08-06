@@ -6,8 +6,6 @@ import { Route, Routes } from "react-router";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import CartPage from "./pages/CartPage/CartPage";
 
-const SortContext = React.createContext(null);
-
 function App() {
   return (
     <div className="wrapper">
