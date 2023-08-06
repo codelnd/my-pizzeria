@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 const SortContext = React.createContext(null);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <SortContext.Provider value={}>
+  <SortContext.Provider value="">
     <BrowserRouter>
       <App />
     </BrowserRouter>
