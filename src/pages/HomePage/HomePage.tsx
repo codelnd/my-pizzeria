@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Categories from "../../components/Categories/Categories";
 import Sort from "../../components/Sort/Sort";
 import Pizza from "../../components/Pizza/Pizza";
