@@ -8,7 +8,7 @@ import { SortContext } from "../../App";
 const HomePage = () => {
   // const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
-  const sortContext = React.useContext(SortContext);
+  const { items, setItems } = React.useContext(SortContext);
 
   React.useEffect(() => {
     fetch(`https://64c0064d0d8e251fd111d86b.mockapi.io/items`)
