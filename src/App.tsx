@@ -6,11 +6,17 @@ import { Route, Routes } from "react-router";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import CartPage from "./pages/CartPage/CartPage";
 
-const SortContext = React.createContext(null);
+const SortContext = React.createContext(null) as null;
 
 function App() {
+  const [items, setItems] = React.useState([]);
+
   return (
-    <SortContext.Provider value="">
+    <SortContext.Provider
+      value={{
+        items,
+      }}
+    >
       <div className="wrapper">
         <Header />
         <main className="content">
