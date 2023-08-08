@@ -1,12 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import Categories from "../../components/Categories/Categories";
 import Sort from "../../components/Sort/Sort";
 import Pizza from "../../components/Pizza/Pizza";
 import Skeleton from "../../components/shared/Skeleton";
+import { SortContext } from "../../App";
 
 const HomePage = () => {
-  const [items, setItems] = React.useState([]);
+  // const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
+  const sortContext = React.useContext(SortContext);
 
   React.useEffect(() => {
     fetch(`https://64c0064d0d8e251fd111d86b.mockapi.io/items`)
