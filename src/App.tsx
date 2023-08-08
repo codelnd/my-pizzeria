@@ -6,18 +6,22 @@ import { Route, Routes } from "react-router";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import CartPage from "./pages/CartPage/CartPage";
 
+const SortContext = React.createContext(null);
+
 function App() {
   return (
-    <div className="wrapper">
-      <Header />
-      <main className="content">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </main>
-    </div>
+    <SortContext.Provider value="">
+      <div className="wrapper">
+        <Header />
+        <main className="content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
+      </div>
+    </SortContext.Provider>
   );
 }
 
