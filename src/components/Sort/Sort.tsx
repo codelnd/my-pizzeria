@@ -1,18 +1,21 @@
 import React from "react";
+import { SortContext } from "../../App";
 
 const Sort = () => {
   const sortCategories = ["популярности", "цене", "алфавиту"];
+  const categoriesOfSort = ["rating", "price", "title"];
   const [isOpen, setIsOpen] = React.useState(false);
   const [selectedCategory, setSelectedCategory] = React.useState(0);
+  const { items, setItems } = React.useContext(SortContext);
 
   const onSetSelectedCategory = (category) => {
     setSelectedCategory(category);
     setIsOpen(false);
     fetch(
-      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?sortBy=rating&order=asc`
+      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?sortBy=${categoriesOfSort[category]}&order=asc`
     )
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setItems(data));
   };
 
   return (
