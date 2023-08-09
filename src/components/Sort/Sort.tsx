@@ -6,7 +6,7 @@ const Sort = () => {
   const categoriesOfSort = ["rating", "price", "title"];
   const [isOpen, setIsOpen] = React.useState(false);
   const [selectedCategory, setSelectedCategory] = React.useState(0);
-  const { items, setItems } = React.useContext(SortContext);
+  const { setItems } = React.useContext(SortContext);
 
   const onSetSelectedCategory = (category) => {
     setSelectedCategory(category);
