@@ -11,6 +11,8 @@ const Categories = () => {
   ];
   const [activeInd, setActiveInd] = React.useState(0);
 
+  const onSetActiveInd = () => {};
+
   return (
     <section className="categories">
       <ul>
