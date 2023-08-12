@@ -15,7 +15,7 @@ function App() {
   );
 
   return (
-    <SortContext.Provider value={{ items, setItems }}>
+    <SortContext.Provider value={{ items, setItems, url, setUrl }}>
       <div className="wrapper">
         <Header />
         <main className="content">
