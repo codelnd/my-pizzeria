@@ -12,11 +12,11 @@ const Categories = () => {
   ];
 
   const [activeInd, setActiveInd] = React.useState(0);
-  const { setItems } = React.useContext(SortContext);
+  const { setItems, url, setUrl } = React.useContext(SortContext);
 
   const onSetActiveInd = (i) => {
     setActiveInd(i);
-    fetch(`https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${i}`)
+    fetch(`${url}?category=${i}`)
       .then((res) => res.json())
       .then((data) => setItems(data));
   };
