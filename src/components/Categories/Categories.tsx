@@ -1,4 +1,5 @@
 import React from "react";
+import { SortContext } from "../../App";
 
 const Categories = () => {
   const categories = [
@@ -11,6 +12,7 @@ const Categories = () => {
   ];
 
   const [activeInd, setActiveInd] = React.useState(0);
+  const { setItems } = React.useContext(SortContext);
 
   const onSetActiveInd = (i) => {
     setActiveInd(i);
