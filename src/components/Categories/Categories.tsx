@@ -13,7 +13,6 @@ const Categories = () => {
 
   const [activeInd, setActiveInd] = React.useState(0);
   const { setItems, items } = React.useContext(SortContext);
-  console.log(items);
 
   const onSetActiveInd = (i) => {
     setActiveInd(i);
