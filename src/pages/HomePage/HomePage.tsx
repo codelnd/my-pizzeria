@@ -6,7 +6,6 @@ import Skeleton from "../../components/shared/Skeleton";
 import { SortContext } from "../../App";
 
 const HomePage = () => {
-  // const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const { items, setItems } = React.useContext(SortContext);
 
