@@ -10,9 +10,6 @@ export const SortContext = React.createContext<Object | null>(null);
 
 function App() {
   const [items, setItems] = React.useState([]);
-  const [url, setUrl] = React.useState(
-    `https://64c0064d0d8e251fd111d86b.mockapi.io/items`
-  );
 
   return (
     <SortContext.Provider value={{ items, setItems }}>
