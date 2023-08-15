@@ -9,7 +9,6 @@ const Categories = () => {
     "Острые",
     "Закрытые",
   ];
-
   const [activeInd, setActiveInd] = React.useState(0);
 
   const onSetActiveInd = (i) => {
