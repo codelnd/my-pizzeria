@@ -6,7 +6,7 @@ const Sort = () => {
   const categoriesOfSort = ["rating", "price", "title"];
   const [isOpen, setIsOpen] = React.useState(false);
   const [selectedCategory, setSelectedCategory] = React.useState(0);
-  const { setItems } = React.useContext(SortContext);
+  const { setItems, activeInd } = React.useContext(SortContext);
 
   const onSetSelectedCategory = (category) => {
     setSelectedCategory(category);
@@ -17,6 +17,7 @@ const Sort = () => {
       .then((res) => res.json())
       .then((data) => setItems(data));
   };
+  // 'https://64c0064d0d8e251fd111d86b.mockapi.io/items?sortBy=rating&category=4&order=asc'
 
   return (
     <section className="sort">
