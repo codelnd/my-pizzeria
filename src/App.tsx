@@ -13,7 +13,7 @@ function App() {
   const [activeInd, setActiveInd] = React.useState(0);
 
   return (
-    <SortContext.Provider value={{ items, setItems }}>
+    <SortContext.Provider value={{ items, setItems, activeInd, setActiveInd }}>
       <div className="wrapper">
         <Header />
         <main className="content">

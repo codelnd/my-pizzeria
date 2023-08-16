@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SortContext } from "../../App";
 
 const Categories = () => {
   const categories = [
@@ -9,6 +10,7 @@ const Categories = () => {
     "Острые",
     "Закрытые",
   ];
+  const { activeInd, setActiveInd } = useContext(SortContext);
 
   const onSetActiveInd = (i) => {
     setActiveInd(i);
