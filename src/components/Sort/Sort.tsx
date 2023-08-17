@@ -10,7 +10,6 @@ const Sort = () => {
     setSelectedCategory,
     selectedCategory,
     categoriesOfSort,
-    onSetCategoryAndSort,
   } = React.useContext(SortContext);
 
   const onSetSelectedCategory = (category) => {

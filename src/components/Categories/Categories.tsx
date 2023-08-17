@@ -16,7 +16,6 @@ const Categories = () => {
     setItems,
     categoriesOfSort,
     selectedCategory,
-    onSetCategoryAndSort,
   } = useContext(SortContext);
 
   const onSetActiveInd = (i) => {
