@@ -11,7 +11,6 @@ export const SortContext = React.createContext<Object | null>(null);
 function App() {
   const [items, setItems] = React.useState([]);
   const categoriesOfSort = ["rating", "price", "title"];
-  const [activeInd, setActiveInd] = React.useState(0);
   const [selectedCategory, setSelectedCategory] = React.useState(0);
 
   return (

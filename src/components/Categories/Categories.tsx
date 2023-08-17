@@ -10,13 +10,9 @@ const Categories = () => {
     "Острые",
     "Закрытые",
   ];
-  const {
-    activeInd,
-    setActiveInd,
-    setItems,
-    categoriesOfSort,
-    selectedCategory,
-  } = useContext(SortContext);
+  const [activeInd, setActiveInd] = React.useState(0);
+  const { setItems, categoriesOfSort, selectedCategory } =
+    useContext(SortContext);
 
   const onSetActiveInd = (i) => {
     setActiveInd(i);
