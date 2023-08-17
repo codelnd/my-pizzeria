@@ -12,17 +12,7 @@ function App() {
   const [items, setItems] = React.useState([]);
 
   return (
-    <SortContext.Provider
-      value={{
-        items,
-        setItems,
-        activeInd,
-        setActiveInd,
-        categoriesOfSort,
-        selectedCategory,
-        setSelectedCategory,
-      }}
-    >
+    <SortContext.Provider value={{ items, setItems }}>
       <div className="wrapper">
         <Header />
         <main className="content">

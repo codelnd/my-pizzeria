@@ -6,13 +6,13 @@ const Sort = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const categoriesOfSort = ["rating", "price", "title"];
   const [selectedCategory, setSelectedCategory] = React.useState(0);
-  const { setItems, activeInd } = React.useContext(SortContext);
+  const { setItems } = React.useContext(SortContext);
 
   const onSetSelectedCategory = (category) => {
     setSelectedCategory(category);
     setIsOpen(false);
     fetch(
-      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?sortBy=${categoriesOfSort[category]}&category=${activeInd}&order=asc`
+      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?sortBy=${categoriesOfSort[category]}&order=asc`
     )
       .then((res) => res.json())
       .then((data) => setItems(data));
