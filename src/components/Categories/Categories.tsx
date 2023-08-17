@@ -10,12 +10,19 @@ const Categories = () => {
     "Острые",
     "Закрытые",
   ];
-  const { activeInd, setActiveInd, setItems } = useContext(SortContext);
+  const {
+    activeInd,
+    setActiveInd,
+    setItems,
+    categoriesOfSort,
+    selectedCategory,
+    onSetCategoryAndSort,
+  } = useContext(SortContext);
 
   const onSetActiveInd = (i) => {
     setActiveInd(i);
     fetch(
-      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?sortBy=${categoriesOfSort[category]}&category=${activeInd}&order=asc`
+      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?sortBy=${categoriesOfSort[selectedCategory]}&category=${activeInd}&order=asc`
     )
       .then((res) => res.json())
       .then((data) => setItems(data));

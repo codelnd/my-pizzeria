@@ -10,17 +10,18 @@ const Sort = () => {
     setSelectedCategory,
     selectedCategory,
     categoriesOfSort,
+    onSetCategoryAndSort,
   } = React.useContext(SortContext);
 
-  const onSetSelectedCategory = (category) => {
-    setSelectedCategory(category);
-    setIsOpen(false);
-    fetch(
-      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?sortBy=${categoriesOfSort[category]}&category=${activeInd}&order=asc`
-    )
-      .then((res) => res.json())
-      .then((data) => setItems(data));
-  };
+  // const onSetSelectedCategory = (category) => {
+  //   setSelectedCategory(category);
+  //   setIsOpen(false);
+  //   fetch(
+  //     `https://64c0064d0d8e251fd111d86b.mockapi.io/items?sortBy=${categoriesOfSort[category]}&category=${activeInd}&order=asc`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => setItems(data));
+  // };
 
   return (
     <section className="sort">
@@ -48,7 +49,7 @@ const Sort = () => {
             {sortCategories.map((el, i) => (
               <li
                 key={i}
-                onClick={() => onSetSelectedCategory(i)}
+                onClick={() => onSetCategoryAndSort(i)}
                 className={selectedCategory === i ? "active" : ""}
               >
                 {el}
