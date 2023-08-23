@@ -7,12 +7,11 @@ import { SortContext } from "../../App";
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = React.useState(true);
-  const { items, setItems } = React.useContext(SortContext);
+  const { items, setItems, activeInd, setActiveInd } =
+    React.useContext(SortContext);
 
   React.useEffect(() => {
-    fetch(
-      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${""}&sortBy=${""}&order=asc`
-    )
+    fetch(`https://64c0064d0d8e251fd111d86b.mockapi.io/items`)
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
@@ -24,6 +23,17 @@ const HomePage = () => {
     // });
     window.scrollBy(0, 0);
   }, []);
+
+  React.useEffect(() => {
+    fetch(
+      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${activeInd}&sortBy=${""}&order=asc`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setItems(data);
+        setIsLoading(false);
+      });
+  }, [activeInd]);
 
   return (
     <div className="container">
