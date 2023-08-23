@@ -11,11 +11,11 @@ const Sort = () => {
   const onSetSelectedCategory = (category) => {
     setSelectedCategory(category);
     setIsOpen(false);
-    fetch(
-      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?sortBy=${categoriesOfSort[category]}&order=asc`
-    )
-      .then((res) => res.json())
-      .then((data) => setItems(data));
+    // fetch(
+    //   `https://64c0064d0d8e251fd111d86b.mockapi.io/items?sortBy=${categoriesOfSort[category]}&order=asc`
+    // )
+    //   .then((res) => res.json())
+    //   .then((data) => setItems(data));
   };
 
   return (

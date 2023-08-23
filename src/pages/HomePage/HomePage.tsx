@@ -8,6 +8,7 @@ import { SortContext } from "../../App";
 const HomePage = () => {
   const [isLoading, setIsLoading] = React.useState(true);
   const { items, setItems } = React.useContext(SortContext);
+  `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${""}&sortBy=${""}&order=asc`;
 
   React.useEffect(() => {
     fetch(`https://64c0064d0d8e251fd111d86b.mockapi.io/items`)

@@ -15,11 +15,11 @@ const Categories = () => {
 
   const onSetActiveInd = (i) => {
     setActiveInd(i);
-    fetch(
-      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${activeInd}&order=asc`
-    )
-      .then((res) => res.json())
-      .then((data) => setItems(data));
+    // fetch(
+    //   `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${activeInd}&order=asc`
+    // )
+    //   .then((res) => res.json())
+    //   .then((data) => setItems(data));
   };
 
   return (
