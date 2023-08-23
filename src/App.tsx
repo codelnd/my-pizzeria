@@ -11,9 +11,21 @@ export const SortContext = React.createContext<Object | null>(null);
 function App() {
   const [items, setItems] = React.useState([]);
   const [activeInd, setActiveInd] = React.useState(0);
+  const categoriesOfSort = ["rating", "price", "title"];
+  const [selectedCategory, setSelectedCategory] = React.useState(0);
 
   return (
-    <SortContext.Provider value={{ items, setItems, activeInd, setActiveInd }}>
+    <SortContext.Provider
+      value={{
+        items,
+        setItems,
+        activeInd,
+        setActiveInd,
+        categoriesOfSort,
+        selectedCategory,
+        setSelectedCategory,
+      }}
+    >
       <div className="wrapper">
         <Header />
         <main className="content">

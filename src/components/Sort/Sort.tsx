@@ -3,11 +3,10 @@ import { SortContext } from "../../App";
 
 const Sort = () => {
   const sortCategories = ["популярности", "цене", "алфавиту"];
-  const categoriesOfSort = ["rating", "price", "title"];
-
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selectedCategory, setSelectedCategory] = React.useState(0);
-  const {} = React.useContext(SortContext);
+
+  const { selectedCategory, setSelectedCategory } =
+    React.useContext(SortContext);
 
   const onSetSelectedCategory = (category) => {
     setSelectedCategory(category);

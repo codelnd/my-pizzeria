@@ -7,7 +7,7 @@ import { SortContext } from "../../App";
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = React.useState(true);
-  const { items, setItems, activeInd, setActiveInd } =
+  const { items, setItems, activeInd, categoriesOfSort, selectedCategory } =
     React.useContext(SortContext);
 
   React.useEffect(() => {
@@ -26,14 +26,14 @@ const HomePage = () => {
 
   React.useEffect(() => {
     fetch(
-      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${activeInd}&sortBy=${""}&order=asc`
+      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${activeInd}&sortBy=${categoriesOfSort[selectedCategory]}&order=asc`
     )
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
         setIsLoading(false);
       });
-  }, [activeInd]);
+  }, [activeInd, selectedCategory]);
 
   return (
     <div className="container">
