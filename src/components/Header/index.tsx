@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../assets/img/logo.svg";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Index = () => {
   return (
     <header className="header">
       <div className="container">
@@ -56,4 +56,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Index;

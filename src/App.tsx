@@ -1,6 +1,6 @@
 import React from "react";
 import "./assets/scss/app.scss";
-import Header from "./components/Header/Header";
+import Index from "./components/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import { Route, Routes } from "react-router";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
@@ -27,7 +27,7 @@ function App() {
       }}
     >
       <div className="wrapper">
-        <Header />
+        <Index />
         <main className="content">
           <Routes>
             <Route path="/" element={<HomePage />} />
