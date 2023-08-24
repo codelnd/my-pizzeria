@@ -1,5 +1,5 @@
 import React from "react";
-import Index from "../../components/Categories";
+import Categories from "../../components/Categories";
 import Sort from "../../components/Sort/Sort";
 import Pizza from "../../components/Pizza/Pizza";
 import Skeleton from "../../components/shared/Skeleton";
@@ -38,7 +38,7 @@ const HomePage = () => {
   return (
     <div className="container">
       <div className="content__top">
-        <Index />
+        <Categories />
         <Sort />
       </div>
       <h2 className="content__title">Все пиццы</h2>

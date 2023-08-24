@@ -1,7 +1,7 @@
 import React from "react";
 import { SortContext } from "../../App";
 
-const Index = () => {
+const Categories = () => {
   const categories = [
     "Все",
     "Мясные",
@@ -36,4 +36,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Categories;
