@@ -27,7 +27,7 @@ function App() {
       }}
     >
       <div className="wrapper">
-        <Header />
+        <Header />s
         <main className="content">
           <Routes>
             <Route path="/" element={<HomePage />} />
