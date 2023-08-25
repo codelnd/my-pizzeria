@@ -9,11 +9,6 @@ import CartPage from "./pages/CartPage/CartPage";
 export const SortContext = React.createContext<Object | null>(null);
 
 function App() {
-  const [items, setItems] = React.useState([]);
-  const [activeInd, setActiveInd] = React.useState(0);
-  const categoriesOfSort = ["rating", "price", "title"];
-  const [selectedCategory, setSelectedCategory] = React.useState(0);
-
   return (
     <SortContext.Provider
       value={{

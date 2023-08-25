@@ -7,8 +7,13 @@ import { SortContext } from "../../App";
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = React.useState(true);
-  const { items, setItems, activeInd, categoriesOfSort, selectedCategory } =
-    React.useContext(SortContext);
+  const [items, setItems] = React.useState([]);
+  const [activeInd, setActiveInd] = React.useState(0);
+  const categoriesOfSort = ["rating", "price", "title"];
+  const [selectedCategory, setSelectedCategory] = React.useState(0);
+
+  // const { items, setItems, activeInd, categoriesOfSort, selectedCategory } =
+  //   React.useContext(SortContext);
 
   React.useEffect(() => {
     fetch(`https://64c0064d0d8e251fd111d86b.mockapi.io/items`)
