@@ -11,10 +11,10 @@ const Categories = () => {
     "Закрытые",
   ];
 
-  const { activeInd, setActiveInd } = React.useContext(SortContext);
+  const { categoryId, setCategoryId } = React.useContext(SortContext);
 
-  const onSetActiveInd = (i) => {
-    setActiveInd(i);
+  const onSetActiveCategory = (i) => {
+    setCategoryId(i);
   };
 
   return (
@@ -24,8 +24,8 @@ const Categories = () => {
           return (
             <li
               key={i}
-              onClick={() => onSetActiveInd(i)}
-              className={activeInd === i ? "active" : ""}
+              onClick={() => onSetActiveCategory(i)}
+              className={categoryId === i ? "active" : ""}
             >
               {el}
             </li>

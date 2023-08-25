@@ -9,12 +9,9 @@ export const SortContext = React.createContext<Object | null>(null);
 const HomePage = () => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [items, setItems] = React.useState([]);
-  const [activeInd, setActiveInd] = React.useState(0);
+  const [categoryId, setCategoryId] = React.useState(0);
   const categoriesOfSort = ["rating", "price", "title"];
   const [selectedCategory, setSelectedCategory] = React.useState(0);
-
-  // const { items, setItems, activeInd, categoriesOfSort, selectedCategory } =
-  //   React.useContext(SortContext);
 
   React.useEffect(() => {
     fetch(`https://64c0064d0d8e251fd111d86b.mockapi.io/items`)
@@ -32,20 +29,20 @@ const HomePage = () => {
 
   React.useEffect(() => {
     fetch(
-      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${activeInd}&sortBy=${categoriesOfSort[selectedCategory]}&order=asc`
+      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${categoryId}&sortBy=${categoriesOfSort[selectedCategory]}&order=asc`
     )
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
         setIsLoading(false);
       });
-  }, [activeInd, selectedCategory]);
+  }, [categoryId, selectedCategory]);
 
   return (
     <SortContext.Provider
       value={{
-        activeInd,
-        setActiveInd,
+        categoryId,
+        setCategoryId,
         selectedCategory,
         setSelectedCategory,
       }}
