@@ -44,11 +44,8 @@ const HomePage = () => {
   return (
     <SortContext.Provider
       value={{
-        items,
-        setItems,
         activeInd,
         setActiveInd,
-        categoriesOfSort,
         selectedCategory,
         setSelectedCategory,
       }}
