@@ -5,6 +5,8 @@ import Pizza from "../../components/Pizza";
 import Skeleton from "../../components/shared/Skeleton";
 import { SortContext } from "../../App";
 
+export const SortContext = React.createContext<Object | null>(null);
+
 const HomePage = () => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [items, setItems] = React.useState([]);
@@ -41,18 +43,30 @@ const HomePage = () => {
   }, [activeInd, selectedCategory]);
 
   return (
-    <div className="container">
-      <div className="content__top">
-        <Categories />
-        <Sort />
+    <SortContext.Provider
+      value={{
+        items,
+        setItems,
+        activeInd,
+        setActiveInd,
+        categoriesOfSort,
+        selectedCategory,
+        setSelectedCategory,
+      }}
+    >
+      <div className="container">
+        <div className="content__top">
+          <Categories />
+          <Sort />
+        </div>
+        <h2 className="content__title">Все пиццы</h2>
+        <div className="content__items">
+          {isLoading
+            ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
+            : items.map((el) => <Pizza key={el.id} {...el} />)}
+        </div>
       </div>
-      <h2 className="content__title">Все пиццы</h2>
-      <div className="content__items">
-        {isLoading
-          ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
-          : items.map((el) => <Pizza key={el.id} {...el} />)}
-      </div>
-    </div>
+    </SortContext.Provider>
   );
 };
 
