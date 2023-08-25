@@ -5,11 +5,10 @@ const Sort = () => {
   const sortCategories = ["популярности", "цене", "алфавиту"];
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const { selectedCategory, setSelectedCategory } =
-    React.useContext(SortContext);
+  const { sortTypeId, setSortTypeId } = React.useContext(SortContext);
 
-  const onSetSelectedCategory = (category) => {
-    setSelectedCategory(category);
+  const onSetSortType = (i) => {
+    setSortTypeId(i);
     setIsOpen(false);
   };
 
@@ -30,7 +29,7 @@ const Sort = () => {
         </svg>
         <b>Сортировка по:</b>
         <span onClick={() => setIsOpen(!isOpen)}>
-          {sortCategories[selectedCategory]}
+          {sortCategories[sortTypeId]}
         </span>
       </div>
       {isOpen && (
@@ -39,8 +38,8 @@ const Sort = () => {
             {sortCategories.map((el, i) => (
               <li
                 key={i}
-                onClick={() => onSetSelectedCategory(i)}
-                className={selectedCategory === i ? "active" : ""}
+                onClick={() => onSetSortType(i)}
+                className={sortTypeId === i ? "active" : ""}
               >
                 {el}
               </li>
