@@ -3,7 +3,6 @@ import Categories from "../../components/Categories";
 import Sort from "../../components/Sort/Sort";
 import Pizza from "../../components/Pizza";
 import Skeleton from "../../components/shared/Skeleton";
-import { SortContext } from "../../App";
 
 export const SortContext = React.createContext<Object | null>(null);
 
