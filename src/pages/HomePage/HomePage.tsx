@@ -44,7 +44,7 @@ const HomePage = () => {
         categoryId,
         onSetActiveCategory: (id) => setCategoryId(id),
         sortTypeId,
-        setSortTypeId,
+        onSetSortType: (id) => setSortTypeId(id),
       }}
     >
       <div className="container">
