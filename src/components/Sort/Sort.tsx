@@ -5,12 +5,7 @@ const Sort = () => {
   const sortCategories = ["популярности", "цене", "алфавиту"];
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const { sortTypeId, setSortTypeId } = React.useContext(SortContext);
-
-  const onSetSortType = (i) => {
-    setSortTypeId(i);
-    setIsOpen(false);
-  };
+  const { sortTypeId, onSetSortType } = React.useContext(SortContext);
 
   return (
     <section className="sort">
@@ -38,7 +33,10 @@ const Sort = () => {
             {sortCategories.map((el, i) => (
               <li
                 key={i}
-                onClick={() => onSetSortType(i)}
+                onClick={() => {
+                  onSetSortType(i);
+                  setIsOpen(false);
+                }}
                 className={sortTypeId === i ? "active" : ""}
               >
                 {el}
