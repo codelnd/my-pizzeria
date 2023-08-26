@@ -10,7 +10,7 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [items, setItems] = React.useState([]);
   const [categoryId, setCategoryId] = React.useState(0);
-  const categoriesOfSort = ["rating", "price", "title"];
+  const sortTypes = ["rating", "price", "title"];
   const [sortTypeId, setSortTypeId] = React.useState(0);
 
   React.useEffect(() => {
@@ -29,7 +29,7 @@ const HomePage = () => {
 
   React.useEffect(() => {
     fetch(
-      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${categoryId}&sortBy=${categoriesOfSort[sortTypeId]}&order=asc`
+      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${categoryId}&sortBy=${sortTypes[sortTypeId]}&order=asc`
     )
       .then((res) => res.json())
       .then((data) => {
