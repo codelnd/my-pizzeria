@@ -42,7 +42,7 @@ const HomePage = () => {
     <SortContext.Provider
       value={{
         categoryId,
-        setCategoryId,
+        onSetActiveCategory: (id) => setCategoryId(id),
         sortTypeId,
         setSortTypeId,
       }}

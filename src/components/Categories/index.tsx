@@ -11,11 +11,7 @@ const Categories = () => {
     "Закрытые",
   ];
 
-  const { categoryId, setCategoryId } = React.useContext(SortContext);
-
-  const onSetActiveCategory = (i) => {
-    setCategoryId(i);
-  };
+  const { categoryId, onSetActiveCategory } = React.useContext(SortContext);
 
   return (
     <section className="categories">
