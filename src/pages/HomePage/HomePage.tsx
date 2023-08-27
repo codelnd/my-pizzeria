@@ -14,11 +14,11 @@ const HomePage = () => {
   const [sortTypeId, setSortTypeId] = React.useState(0);
 
   React.useEffect(() => {
+    let category = categoryId ? categoryId : "" && sortTypes[sortTypeId];
+    let sort = sortTypeId ? sortTypes[sortTypeId] : "";
     setIsLoading(true);
     fetch(
-      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${
-        categoryId ? categoryId : ""
-      }&order=asc`
+      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${category}&sortBy=${sort}&order=asc`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -30,7 +30,7 @@ const HomePage = () => {
     //   behavior: "smooth",
     // });
     window.scrollBy(0, 0);
-  }, [categoryId]);
+  }, [categoryId, sortTypeId]);
 
   // React.useEffect(() => {
   //   fetch(
