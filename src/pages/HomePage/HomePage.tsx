@@ -32,17 +32,6 @@ const HomePage = () => {
     window.scrollBy(0, 0);
   }, [categoryId, sortTypeId]);
 
-  // React.useEffect(() => {
-  //   fetch(
-  //     `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${categoryId}&sortBy=${sortTypes[sortTypeId]}&order=asc`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setItems(data);
-  //       setIsLoading(false);
-  //     });
-  // }, [categoryId, sortTypeId]);
-
   return (
     <SortContext.Provider
       value={{
