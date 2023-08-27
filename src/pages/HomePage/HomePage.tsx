@@ -14,6 +14,7 @@ const HomePage = () => {
   const [sortTypeId, setSortTypeId] = React.useState(0);
 
   React.useEffect(() => {
+    setIsLoading(true);
     fetch(
       `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${
         categoryId ? categoryId : ""
