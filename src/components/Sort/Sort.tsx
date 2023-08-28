@@ -26,7 +26,7 @@ const Sort = () => {
         </svg>
         <b>Сортировка по:</b>
         <span onClick={() => setIsOpen(!isOpen)}>
-          {sortCategories[sortTypeId]}
+          {sortCategories[sortTypeId][0]}
         </span>
       </div>
       {isOpen && (

@@ -9,7 +9,7 @@ import CartPage from "./pages/CartPage/CartPage";
 function App() {
   return (
     <div className="wrapper">
-      <Header />s
+      <Header />
       <main className="content">
         <Routes>
           <Route path="/" element={<HomePage />} />
