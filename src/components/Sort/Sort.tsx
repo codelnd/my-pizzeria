@@ -28,7 +28,7 @@ const Sort = () => {
         </svg>
         <b>Сортировка по:</b>
         <span onClick={() => setIsOpen(!isOpen)}>
-          {sortCategories[sortTypeId][0]}
+          {sortCategories[sortTypeId]["title"]}
         </span>
       </div>
       {isOpen && (
@@ -43,7 +43,7 @@ const Sort = () => {
                 }}
                 className={sortTypeId === i ? "active" : ""}
               >
-                {el}
+                {el.title}
               </li>
             ))}
           </ul>
