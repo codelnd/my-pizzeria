@@ -3,7 +3,9 @@ import { SortContext } from "../../pages/HomePage/HomePage";
 
 const Sort = () => {
   const sortCategories = [
-    { rating: "популярности", price: "цене", title: "алфавиту" },
+    { title: "популярности", type: "rating" },
+    { title: "цене", type: "price" },
+    { title: "алфавиту", type: "title" },
   ];
   const [isOpen, setIsOpen] = React.useState(false);
 
