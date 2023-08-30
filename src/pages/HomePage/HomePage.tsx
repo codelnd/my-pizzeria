@@ -7,6 +7,11 @@ import Skeleton from "../../components/shared/Skeleton";
 export const SortContext = React.createContext<Object | null>(null);
 
 const HomePage = () => {
+  const sortCategories = [
+    { title: "популярности", type: "rating" },
+    { title: "цене", type: "price" },
+    { title: "алфавиту", type: "title" },
+  ];
   const [isLoading, setIsLoading] = React.useState(true);
   const [items, setItems] = React.useState([]);
   const [categoryId, setCategoryId] = React.useState(0);
