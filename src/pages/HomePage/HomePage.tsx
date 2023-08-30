@@ -15,7 +15,6 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [items, setItems] = React.useState([]);
   const [categoryId, setCategoryId] = React.useState(0);
-  const sortTypes = ["rating", "price", "title"];
   const [sortTypeId, setSortTypeId] = React.useState(0);
 
   React.useEffect(() => {
