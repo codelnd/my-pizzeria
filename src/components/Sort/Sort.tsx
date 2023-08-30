@@ -3,7 +3,6 @@ import { SortContext } from "../../pages/HomePage/HomePage";
 
 const Sort = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-
   const { sortTypeId, onSetSortType, sortCategories } =
     React.useContext(SortContext);
 

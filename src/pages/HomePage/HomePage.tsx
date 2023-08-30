@@ -19,7 +19,7 @@ const HomePage = () => {
   const [sortTypeId, setSortTypeId] = React.useState(0);
 
   React.useEffect(() => {
-    let category = categoryId ? categoryId : "" && sortTypes[sortTypeId];
+    let category = categoryId ? categoryId : "";
     let sort = sortTypeId ? sortTypes[sortTypeId] : "";
     setIsLoading(true);
     fetch(
