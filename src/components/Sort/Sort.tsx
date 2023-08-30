@@ -2,14 +2,10 @@ import React from "react";
 import { SortContext } from "../../pages/HomePage/HomePage";
 
 const Sort = () => {
-  const sortCategories = [
-    { title: "популярности", type: "rating" },
-    { title: "цене", type: "price" },
-    { title: "алфавиту", type: "title" },
-  ];
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const { sortTypeId, onSetSortType } = React.useContext(SortContext);
+  const { sortTypeId, onSetSortType, sortCategories } =
+    React.useContext(SortContext);
 
   return (
     <section className="sort">
