@@ -29,10 +29,6 @@ const HomePage = () => {
         setItems(data);
         setIsLoading(false);
       });
-    // document.body.scrollIntoView({
-    //   block: "start",
-    //   behavior: "smooth",
-    // });
     window.scrollBy(0, 0);
   }, [categoryId, sortTypeId]);
 
