@@ -20,10 +20,9 @@ const HomePage = () => {
   React.useEffect(() => {
     let category = categoryId !== 0 ? categoryId : "";
     let sort = sortTypeId !== 0 ? sortCategories[sortTypeId].type : "";
+    let url = `https://64c0064d0d8e251fd111d86b.mockapi.io/items`;
     setIsLoading(true);
-    fetch(
-      `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${category}&sortBy=${sort}&order=asc`
-    )
+    fetch(`${url}?category=${category}&sortBy=${sort}&order=asc`)
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
