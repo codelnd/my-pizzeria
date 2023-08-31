@@ -19,7 +19,7 @@ const HomePage = () => {
 
   React.useEffect(() => {
     let category = categoryId ? categoryId : "";
-    let sort = sortTypeId ? sortCategories[sortTypeId].type : "";
+    let sort = sortTypeId !== 0 ? sortCategories[sortTypeId].type : "";
     setIsLoading(true);
     fetch(
       `https://64c0064d0d8e251fd111d86b.mockapi.io/items?category=${category}&sortBy=${sort}&order=asc`
