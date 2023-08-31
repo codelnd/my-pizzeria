@@ -29,7 +29,11 @@ const HomePage = () => {
         setItems(data);
         setIsLoading(false);
       });
-    window.scrollBy(0, 0);
+    document.body.scrollIntoView({
+      block: "start",
+      behavior: "smooth",
+    });
+    // window.scrollBy(0, 0);
   }, [categoryId, sortTypeId]);
 
   return (
