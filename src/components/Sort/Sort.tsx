@@ -29,18 +29,21 @@ const Sort = () => {
       {isOpen && (
         <div className="sort__popup">
           <ul>
-            {sortCategories.map((el, i) => (
-              <li
-                key={i}
-                onClick={() => {
-                  onSetSortType(i);
-                  setIsOpen(false);
-                }}
-                className={sortTypeId === i ? "active" : ""}
-              >
-                {el.title}
-              </li>
-            ))}
+            {sortCategories.map((el, i) => {
+              console.log(el);
+              return (
+                <li
+                  key={i}
+                  onClick={() => {
+                    onSetSortType(i);
+                    setIsOpen(false);
+                  }}
+                  className={sortTypeId === i ? "active" : ""}
+                >
+                  {el.title}
+                </li>
+              );
+            })}
           </ul>
         </div>
       )}
