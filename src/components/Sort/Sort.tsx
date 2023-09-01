@@ -35,7 +35,7 @@ const Sort = () => {
                     onSetSortType(el);
                     setIsOpen(false);
                   }}
-                  className={sortType.type == el.type ? "active" : ""}
+                  className={sortType.type === el.type ? "active" : ""}
                 >
                   {el.title}
                 </li>
