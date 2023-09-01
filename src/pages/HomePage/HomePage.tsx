@@ -15,7 +15,10 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [items, setItems] = React.useState([]);
   const [categoryId, setCategoryId] = React.useState(0);
-  const [sortTypeId, setSortTypeId] = React.useState(0);
+  const [sortType, setSortType] = React.useState({
+    title: "популярности",
+    type: "rating",
+  });
 
   React.useEffect(() => {
     // let category = categoryId !== 0 ? categoryId : "";
@@ -42,8 +45,8 @@ const HomePage = () => {
       value={{
         categoryId,
         onSetActiveCategory: (id) => setCategoryId(id),
-        sortTypeId,
-        onSetSortType: (id) => setSortTypeId(id),
+        sortType,
+        onSetSortType: (sortType) => setSortType(sortType),
         sortCategories,
       }}
     >
