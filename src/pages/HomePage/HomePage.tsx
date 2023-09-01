@@ -18,9 +18,11 @@ const HomePage = () => {
   const [sortTypeId, setSortTypeId] = React.useState(0);
 
   React.useEffect(() => {
-    let category = categoryId !== 0 ? categoryId : "";
-    let sort = sortTypeId !== 0 ? sortCategories[sortTypeId].type : "";
+    // let category = categoryId !== 0 ? categoryId : "";
+    // let sort = sortTypeId !== 0 ? sortCategories[sortTypeId].type : "";
     let url = `https://64c0064d0d8e251fd111d86b.mockapi.io/items`;
+    let category = categoryId;
+    let sort = sortCategories[sortTypeId].type;
     setIsLoading(true);
     fetch(`${url}?category=${category}&sortBy=${sort}&order=asc`)
       .then((res) => res.json())
