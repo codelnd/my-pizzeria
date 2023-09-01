@@ -46,7 +46,7 @@ const HomePage = () => {
         categoryId,
         onSetActiveCategory: (id) => setCategoryId(id),
         sortType,
-        onSetSortType: (sortType) => setSortType(sortType),
+        onSetSortType: (i) => setSortType(i),
         sortCategories,
       }}
     >
