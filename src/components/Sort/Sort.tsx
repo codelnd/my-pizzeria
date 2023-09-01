@@ -3,7 +3,7 @@ import { SortContext } from "../../pages/HomePage/HomePage";
 
 const Sort = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const { sortTypeId, onSetSortType, sortCategories } =
+  const { sortType, onSetSortType, sortCategories } =
     React.useContext(SortContext);
 
   return (
@@ -22,23 +22,20 @@ const Sort = () => {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={() => setIsOpen(!isOpen)}>
-          {sortCategories[sortTypeId]["title"]}
-        </span>
+        <span onClick={() => setIsOpen(!isOpen)}>{sortType["title"]}</span>
       </div>
       {isOpen && (
         <div className="sort__popup">
           <ul>
             {sortCategories.map((el, i) => {
-              console.log(el);
               return (
                 <li
                   key={i}
                   onClick={() => {
-                    onSetSortType(i);
+                    onSetSortType(el);
                     setIsOpen(false);
                   }}
-                  className={sortTypeId === i ? "active" : ""}
+                  className={sortType === el ? "active" : ""}
                 >
                   {el.title}
                 </li>

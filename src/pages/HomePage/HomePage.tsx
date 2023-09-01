@@ -25,7 +25,7 @@ const HomePage = () => {
     // let sort = sortTypeId !== 0 ? sortCategories[sortTypeId].type : "";
     let url = `https://64c0064d0d8e251fd111d86b.mockapi.io/items`;
     let category = categoryId;
-    let sort = sortCategories[sortTypeId].type;
+    let sort = sortType.type;
     setIsLoading(true);
     fetch(`${url}?category=${category}&sortBy=${sort}&order=asc`)
       .then((res) => res.json())
@@ -38,7 +38,7 @@ const HomePage = () => {
       behavior: "smooth",
     });
     // window.scrollBy(0, 0);
-  }, [categoryId, sortTypeId]);
+  }, [categoryId, sortType]);
 
   return (
     <SortContext.Provider
