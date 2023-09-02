@@ -7,14 +7,6 @@ import Skeleton from "../../components/shared/Skeleton";
 export const SortContext = React.createContext<Object | null>(null);
 
 const HomePage = () => {
-  const sortCategories = [
-    { title: "популярности убыв.", type: "rating" },
-    { title: "популярности возр.", type: "rating" },
-    { title: "цене по убыв.", type: "price" },
-    { title: "цене по возр.", type: "price" },
-    { title: "алфавиту по убыв.", type: "title" },
-    { title: "алфавиту по возр.", type: "title" },
-  ];
   const [isLoading, setIsLoading] = React.useState(true);
   const [items, setItems] = React.useState([]);
   const [categoryId, setCategoryId] = React.useState(0);
@@ -47,7 +39,6 @@ const HomePage = () => {
         onSetActiveCategory: (id) => setCategoryId(id),
         sortType,
         onSetSortType: (type) => setSortType(type),
-        sortCategories,
       }}
     >
       <div className="container">
