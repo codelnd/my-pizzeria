@@ -21,23 +21,20 @@ const HomePage = () => {
   });
 
   React.useEffect(() => {
+    let baseUrl = `https://64c0064d0d8e251fd111d86b.mockapi.io/items`;
     let category = categoryId !== 0 ? categoryId : "";
-    // let sort = sortTypeId !== 0 ? sortCategories[sortTypeId].type : "";
-    let url = `https://64c0064d0d8e251fd111d86b.mockapi.io/items`;
-    // let category = categoryId;
-    let sort = sortType.type;
     setIsLoading(true);
-    fetch(`${url}?category=${category}&sortBy=${sort}&order=desc`)
+    fetch(`${baseUrl}?category=${category}&sortBy=${sortType.type}&order=desc`)
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
         setIsLoading(false);
       });
-    document.body.scrollIntoView({
-      block: "start",
-      behavior: "smooth",
-    });
-    // window.scrollBy(0, 0);
+    window.scrollBy(0, 0);
+    // document.body.scrollIntoView({
+    //   block: "start",
+    //   behavior: "smooth",
+    // });
   }, [categoryId, sortType]);
 
   return (
