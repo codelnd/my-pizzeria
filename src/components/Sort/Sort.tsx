@@ -3,12 +3,12 @@ import { SortContext } from "../../pages/HomePage/HomePage";
 
 const Sort = () => {
   const sortCategories = [
-    { title: "популярности убыв.", type: "rating" },
+    { title: "популярности убыв.", type: "-rating" },
     { title: "популярности возр.", type: "rating" },
-    { title: "цене по убыв.", type: "price" },
-    { title: "цене по возр.", type: "price" },
-    { title: "алфавиту по убыв.", type: "title" },
-    { title: "алфавиту по возр.", type: "title" },
+    { title: "цене убыв.", type: "-price" },
+    { title: "цене возр.", type: "price" },
+    { title: "алфавиту убыв.", type: "-title" },
+    { title: "алфавиту возр.", type: "title" },
   ];
   const [isOpen, setIsOpen] = React.useState(false);
   const { sortType, onSetSortType } = React.useContext(SortContext);

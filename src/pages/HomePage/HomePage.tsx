@@ -12,7 +12,7 @@ const HomePage = () => {
   const [categoryId, setCategoryId] = React.useState(0);
   const [sortType, setSortType] = React.useState({
     title: "популярности убыв.",
-    type: "rating",
+    type: "-rating",
   });
 
   React.useEffect(() => {
