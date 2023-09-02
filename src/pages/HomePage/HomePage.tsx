@@ -16,10 +16,14 @@ const HomePage = () => {
   });
 
   React.useEffect(() => {
-    let baseUrl = `https://64c0064d0d8e251fd111d86b.mockapi.io/items`;
-    let category = categoryId !== 0 ? categoryId : "";
+    const baseUrl = `https://64c0064d0d8e251fd111d86b.mockapi.io/items`;
+    const category = categoryId !== 0 ? categoryId : "";
+    const typeReplaced = sortType.type.replace("-", "");
+    const typeNegative = sortType.type.includes("-") ? "desc" : "asc";
     setIsLoading(true);
-    fetch(`${baseUrl}?category=${category}&sortBy=${sortType.type}&order=desc`)
+    fetch(
+      `${baseUrl}?category=${category}&sortBy=${typeReplaced}&order=${typeNegative}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
