@@ -1,6 +1,6 @@
 import React from "react";
 import Categories from "../../components/Categories";
-import Sort from "../../components/Sort/Sort";
+import Sort from "../../components/Sort";
 import Pizza from "../../components/Pizza";
 import Skeleton from "../../components/shared/Skeleton";
 
@@ -29,11 +29,11 @@ const HomePage = () => {
         setItems(data);
         setIsLoading(false);
       });
-    window.scrollBy(0, 0);
-    // document.body.scrollIntoView({
-    //   block: "start",
-    //   behavior: "smooth",
-    // });
+    // window.scrollBy(0, 0);
+    document.body.scrollIntoView({
+      block: "start",
+      behavior: "smooth",
+    });
   }, [categoryId, sortType]);
 
   return (
