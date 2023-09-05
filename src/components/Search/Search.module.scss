@@ -1,5 +1,18 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
 .search {
-  width: 250px;
+  max-width: 250px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 8px 16px;
+}
+
+.icon {
+  display: block;
+  width: 23px;
+  height: 23px;
 }
