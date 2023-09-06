@@ -39,15 +39,16 @@ const HomePage = () => {
   return (
     <SortContext.Provider
       value={{
-        categoryId,
-        onSetActiveCategory: (id) => setCategoryId(id),
         sortType,
         onSetSortType: (type) => setSortType(type),
       }}
     >
       <div className="container">
         <div className="content__top">
-          <Categories />
+          <Categories
+            categoryId={categoryId}
+            onSetActiveCategory={(id) => setCategoryId(id)}
+          />
           <Sort />
         </div>
         <h2 className="content__title">Все пиццы</h2>
