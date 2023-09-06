@@ -1,7 +1,6 @@
 import React from "react";
-import { SortContext } from "../../pages/HomePage/HomePage";
 
-const Categories = () => {
+const Categories = (props) => {
   const categories = [
     "Все",
     "Мясные",
@@ -11,8 +10,6 @@ const Categories = () => {
     "Закрытые",
   ];
 
-  const { categoryId, onSetActiveCategory } = React.useContext(SortContext);
-
   return (
     <section className="categories">
       <ul>
@@ -20,8 +17,8 @@ const Categories = () => {
           return (
             <li
               key={i}
-              onClick={() => onSetActiveCategory(i)}
-              className={categoryId === i ? "active" : ""}
+              onClick={() => props.onSetActiveCategory(i)}
+              className={props.categoryId === i ? "active" : ""}
             >
               {el}
             </li>
