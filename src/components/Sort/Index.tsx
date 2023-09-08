@@ -1,7 +1,7 @@
 import React from "react";
 import { SortContext } from "../../pages/HomePage/HomePage";
 
-const Sort = () => {
+const Sort = (props) => {
   const sortCategories = [
     { title: "популярности убыв.", type: "-rating" },
     { title: "популярности возр.", type: "rating" },
@@ -11,7 +11,6 @@ const Sort = () => {
     { title: "алфавиту возр.", type: "title" },
   ];
   const [isOpen, setIsOpen] = React.useState(false);
-  const { sortType, onSetSortType } = React.useContext(SortContext);
 
   return (
     <section className="sort">
@@ -29,7 +28,9 @@ const Sort = () => {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={() => setIsOpen(!isOpen)}>{sortType["title"]}</span>
+        <span onClick={() => setIsOpen(!isOpen)}>
+          {props.sortType["title"]}
+        </span>
       </div>
       {isOpen && (
         <div className="sort__popup">
@@ -39,10 +40,10 @@ const Sort = () => {
                 <li
                   key={i}
                   onClick={() => {
-                    onSetSortType(el);
+                    props.onSetSortType(el);
                     setIsOpen(false);
                   }}
-                  className={sortType.type === el.type ? "active" : ""}
+                  className={props.sortType.type === el.type ? "active" : ""}
                 >
                   {el.title}
                 </li>
