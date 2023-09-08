@@ -9,6 +9,8 @@ import CartPage from "./pages/CartPage/CartPage";
 export const SortContext = React.createContext<Object | null>(null);
 
 function App() {
+  const [searchValue, setSearchValue] = React.useState("");
+
   return (
     <div className="wrapper">
       <Header />
