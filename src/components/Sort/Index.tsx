@@ -1,5 +1,4 @@
 import React from "react";
-import { SortContext } from "../../pages/HomePage/HomePage";
 
 const Sort = (props) => {
   const sortCategories = [
