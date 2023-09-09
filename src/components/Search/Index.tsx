@@ -3,6 +3,10 @@ import s from "./Search.module.scss";
 import searchIcon from "../../assets/img/search.svg";
 
 const Search = () => {
+  const onChangeSearchValue = (e) => {
+    onSetSearchValue(e.target.value);
+  };
+
   return (
     <div className={s.wrapper}>
       <img className={s.icon} src={searchIcon} alt="иконка поиска" />
