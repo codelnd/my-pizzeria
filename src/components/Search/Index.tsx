@@ -1,10 +1,13 @@
 import React from "react";
 import s from "./Search.module.scss";
 import searchIcon from "../../assets/img/search.svg";
+import { Context } from "../../App";
 
 const Search = () => {
-  const onChangeSearchValue = (value) => {
-    onSetSearchValue(value);
+  const { searchValue, setSearchValue } = React.useContext(Context);
+
+  const onChangeSearchValue = (e) => {
+    setSearchValue(e.target.value);
   };
 
   return (
@@ -14,7 +17,8 @@ const Search = () => {
         className={s.search}
         type="search"
         placeholder="Введите пиццу..."
-        onChange={(e) => onChangeSearchValue(e.target.value)}
+        onChange={onChangeSearchValue}
+        value={searchValue}
       />
     </div>
   );
