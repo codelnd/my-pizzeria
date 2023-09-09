@@ -3,6 +3,7 @@ import Categories from "../../components/Categories";
 import Sort from "../../components/Sort";
 import Pizza from "../../components/Pizza";
 import Skeleton from "../../components/shared/Skeleton";
+import { Context } from "../../App";
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -12,6 +13,7 @@ const HomePage = () => {
     title: "популярности убыв.",
     type: "-rating",
   });
+  const { searchValue } = React.useContext(Context);
 
   React.useEffect(() => {
     const baseUrl = `https://64c0064d0d8e251fd111d86b.mockapi.io/items`;
